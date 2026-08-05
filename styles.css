@@ -24,7 +24,7 @@
 }
 
 html, body{
-    min-height: 100vh;
+    min-height: 300vh;
     width: 100%;
 }
 
@@ -42,9 +42,17 @@ html, body{
 .hover:hover {
     cursor: pointer;
     opacity: .7;
+
     
 
 }
+
+.cursor{
+
+    cursor: pointer;
+}
+
+
 
 img{
     vertical-align: middle;
@@ -212,10 +220,21 @@ header{
 
 }
 
+.Lang-btn:hover{
+    /* background: #18181A; */
+    /* opacity: .7; */
+    background:#0000001a
+    
+}
+
 .flag-icon{
     height: 16px;
     width: 16px;
 }
+
+
+
+
 
 .login-btn{
     width: 24px;
@@ -297,6 +316,7 @@ li{
 .bi-search{
     margin-left: auto;
     /* padding-right: 15%;  */
+    cursor:pointer;
     
     
     
