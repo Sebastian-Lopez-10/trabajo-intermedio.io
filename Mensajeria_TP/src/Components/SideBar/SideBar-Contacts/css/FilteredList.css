@@ -1,0 +1,18 @@
+.alert-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    gap: clamp(30px, 8vw, 60px);
+    padding: 0 16px;
+    text-align: center;
+}
+
+.alert{
+    font-size: clamp(18px, 5vw, 25px);
+}
+
+.moji{
+    font-size: clamp(32px, 9vw, 40px);
+}

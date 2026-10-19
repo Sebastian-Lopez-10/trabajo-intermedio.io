@@ -1,0 +1,303 @@
+.main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: rgb(253, 253, 253);
+    transition: background-color 0.35s ease;
+    
+}
+
+.nav-side-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: clamp(48px, 4%, 64px);
+    flex-shrink: 0;
+    height: 100vh;
+    background-color: #f5f5f5;
+    
+    border-right: 1px solid rgb(221, 221, 221);
+    transition: background-color 0.35s ease,
+                border-color 0.35s ease;
+}
+
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex: 1 1 420px;
+    min-width: 0;
+    width: 100%;
+    max-width: 500px;
+    height: 100vh;
+    /* base fill under the curved accent */
+    background-color: rgb(255, 255, 255);
+
+    /*
+        Curved accent: two elliptical glows anchored below the bottom-left
+        corner, so the green peaks against the left edge and sweeps
+        downward as it travels to the right.
+
+        Tune the radius pair "<width> <height>":
+        - bigger height  -> taller peak on the left
+        - bigger width   -> the curve drops off more slowly to the right
+        Moving the "at" position further outside the corner flattens the arc.
+
+        The anchor y (113% / 116%) only slides the whole arc up or down;
+        the radii and the anchor x set the shape, so leave them alone when
+        the goal is just to lower the gradient.
+    */
+    background-image:
+        radial-gradient(150% 26% at -5% 113%,
+            rgb(4, 238, 102) 0%,
+            rgb(4, 238, 102) 30%,
+            rgba(4, 238, 102, 0) 100%),
+        radial-gradient(185% 44% at -8% 116%,
+            rgb(60, 175, 108) 0%,
+            rgb(60, 175, 108) 35%,
+            rgba(60, 175, 108, 0) 100%);
+    /* opacity: 0; */
+
+    border-right: 1px solid rgb(221, 221, 221);
+    transition: background-color 0.35s ease,
+                border-color 0.35s ease;
+}
+
+.side-bar-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: clamp(12px, 2.5vw, 20px);
+    gap: clamp(12px, 2.5vw, 20px);
+}
+
+.side-bar-header-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+.side-bar-header-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    gap: clamp(10px, 3vw, 14px);
+}
+
+.side-bar-sett-btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.side-bar-new-chat-btn{
+    background-color: rgb(7, 167, 74);
+    border: none;
+    border-radius: 50%;
+    width: clamp(36px, 10vw, 40px);
+    height: clamp(36px, 10vw, 40px);
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.side-bar-new-chat-btn:hover{
+    background-color: rgb(5, 140, 62);
+}
+
+.header-title{
+    font-size: clamp(20px, 5vw, 25px);
+    font-weight: 400;
+    color: rgb(17, 17, 17);
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    transition: color 0.35s ease;
+
+}
+
+.chat-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 600px;
+    min-width: 500px;
+    width: 100%;
+    height: 100vh;
+
+}
+
+.contact-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    
+    gap: 10px;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.nav-column-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    height: 100%;
+    padding-top: 25px;
+}
+
+
+
+.nav-btn{
+    border: none;
+    color: #444444;
+    background-color: transparent;
+    padding: 8px;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                color 0.35s ease;
+}
+
+.nav-btn:hover{
+    background-color: #d2d4d4;
+}
+
+/* =========================================================
+   DARK THEME — paleta del StartingScreen (negro + magenta/púrpura)
+   Se activa cuando <body data-theme="dark">.
+   Los tokens (--accent, --text-main, ...) viven en StartingScreen.css
+   y index.css, igual que en la pantalla inicial.
+   ========================================================= */
+body[data-theme="dark"] .main-container{
+    background-color: var(--primary-background-color);
+}
+
+body[data-theme="dark"] .nav-side-bar{
+    background-color: #0a0a0a;
+    border-right-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Mismo accente curvo del costado, pero con la paleta magenta */
+body[data-theme="dark"] .side-bar{
+    background-color: var(--primary-background-color);
+    background-image:
+        radial-gradient(150% 26% at -5% 113%,
+            var(--accent) 0%,
+            var(--accent) 30%,
+            rgba(205, 58, 242, 0) 100%),
+        radial-gradient(185% 44% at -8% 116%,
+            var(--accent-2) 0%,
+            var(--accent-2) 35%,
+            rgba(177, 48, 177, 0) 100%);
+    border-right-color: rgba(255, 255, 255, 0.08);
+}
+
+body[data-theme="dark"] .header-title{
+    color: var(--text-main);
+}
+
+body[data-theme="dark"] .side-bar-new-chat-btn{
+    background-color: var(--accent-2);
+}
+
+body[data-theme="dark"] .side-bar-new-chat-btn:hover{
+    background-color: var(--accent);
+}
+
+body[data-theme="dark"] .nav-btn{
+    color: var(--text-main);
+}
+
+body[data-theme="dark"] .nav-btn:hover{
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+
+
+@media (max-width: 767px){
+    .main-container{
+        flex-direction: column;
+        align-items: stretch;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .nav-side-bar{
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 8px;
+        padding: 8px;
+        border-right: none;
+        border-bottom: 1px solid rgb(221, 221, 221);
+    }
+
+    .nav-column-container{
+        flex-direction: row;
+        height: auto;
+        padding-top: 0;
+        gap: 8px;
+    }
+
+    .side-bar{
+        width: 100%;
+        max-width: none;
+        height: auto;
+        flex: 1 1 auto;
+        min-height: 0;
+        border-right: none;
+        background-image: none;
+    }
+
+
+    .contact-list{
+        flex: 1 1 auto;
+        height: auto;
+    }
+
+    .chat-box{
+        width: 100%;
+        height: auto;
+        min-height: 40vh;
+        flex: 1 1 auto;
+        min-width: 0;
+        border-top: 1px solid rgb(221, 221, 221);
+    }
+
+    body[data-theme="light"] .side-bar{
+        background-color: #f5f5f5;
+    }
+
+    body[data-theme="dark"] .side-bar{
+        background-color: black;
+        background-image: none;
+    }
+}
+
+@media (min-width: 768px){
+    .main-container{
+        height: 100vh;
+    }
+}
+
+@media (min-width: 1600px){
+    .side-bar{
+        max-width: 560px;
+    }
+}

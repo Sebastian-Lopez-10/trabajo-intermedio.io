@@ -1,0 +1,9 @@
+En este proyecto tenia como objetico crear una mensajeria con el estilo de whatsapp con alguna libertad creativa en algunos puntos, pero no me dio el tiempo como para implementarlos todos, para empezar:
+
+1. Tenia planeado hacer 3 pantallas inicialmente, StartingScreen donde el usuario iba a elegir el tema de la aplicacion y el lenguaje (no llege a implementarlo), ademas de declarar el nombre, y buscar una manera de hacer que los 3 datos no se perdiesen cuando el usuario pase de pantalla. 
+luego MainScreen, donde estarian el side bar con los contactos y los chats, lamentablemente no llegue a terminar la parte de los mensajes, por lo que los contactos no se pueden abrir, aunque logre usar los datos que le pedi al usuario en la pantalla anterior. Ademas, consegui hacer que la barra de busqueda filtrase a traves de los contactos en base a este video: https://youtu.be/F_QAgrKkR2Y?si=VesIPPcMNMk-UOQ-
+Y finalmente tenia pensado crear una pantalla de settings, en donde el usuario pueda cambiar el tema y su nombre sin necesidad de volver a la pantalla anterior, pero no me dio el tiempo.
+
+
+En cuanto a las dificultades, la mas grande fue el color de fondo con degradado, ya que cuando quise implementar la transicion entre los temas, descubri que es imposible usar transition con un background color gradient, asi que tuve que pedirle a la ia que recree el efecto de degradado a mano, color por color de ambos temas, y que aplique la trancision a cada color. 
+Quitando eso, el problema mas grande vino de parte de la barra de busqueda, en retrospectiva no fue nada super complicado, pero en ese momento me costo entender como funcionaba la logica.

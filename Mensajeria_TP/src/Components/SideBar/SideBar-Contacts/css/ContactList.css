@@ -1,0 +1,144 @@
+
+
+.contact-container{
+    display: flex;
+    flex-direction: row;
+    color: lightgray;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    transition: background-color 0.3s ease,
+                color 0.35s ease;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.contact-container:hover{
+    background-color: #d2d4d4;
+}
+
+.contact-img-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+}
+
+.contact-img{
+    flex-shrink: 0;
+    height: clamp(44px, 12vw, 50px);
+    width: clamp(44px, 12vw, 50px);
+    border-radius: 50%;
+
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 5px;
+    margin-left: 10px;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    
+}
+
+.contact-date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    padding-left: 10px;
+    flex-shrink: 0;
+    gap: 8px;
+}
+
+.contact h2{
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2667;
+    color: #111b21;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contact p{
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3077;
+    color: #667781;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contact span{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.3077;
+}
+
+.text-date-con{
+    color: #667781;
+
+}
+
+.to-read{
+    display: flex;
+    background-color: #26ad3d;
+    border-radius: 999px;
+    color: #ffffff;
+    height: 100%;
+    width: 60%;
+    min-width: 22px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================================
+   DARK THEME — paleta del StartingScreen (negro + magenta/púrpura)
+   ========================================================= */
+body[data-theme="dark"] .contact-container{
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--text-main);
+}
+
+body[data-theme="dark"] .contact-container:hover{
+    background-color: rgba(255, 255, 255, 0.16);
+}
+
+body[data-theme="dark"] .contact h2{
+    color: var(--text-main);
+}
+
+body[data-theme="dark"] .contact p{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body[data-theme="dark"] .text-date-con{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body[data-theme="dark"] .to-read{
+    background-color: var(--accent-2);
+}
+
+
+@media (max-width: 640px) {
+
+    .contact-container{
+        border-radius: 0;
+    }
+    
+}
